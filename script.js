@@ -1,22 +1,21 @@
 // Complete the js code
 function Car(make, model) {
 	this.make = make,
-		this.model = model0
-    getMakeModel(){
-		 console.log(`${Car.make}${Car.model}`)
-	}
+		this.model = model
 }
-
-function SportsCar(make, model, topSpeed) {
+Car.prototype.getMakeModel = function () {
+	return `${this.make}${this.model}`
+}
+function SportsCar extends Car(make, model, topSpeed) {
 	super(this.make,this.model)
 	this.topSpeed = topSpeed
-	getTopSpeed(){
-		return this.topSpeed
-	}
+	
 	
 }
 
- SportsCar.prototype = Car.prototype 
+ SportsCar.prototype.getMakeModel = function (){
+	 return this.topSpeed
+ }
 
 // Do not change the code below
 window.Car = Car;
